@@ -6,6 +6,7 @@
       </n-button>
       <n-button @click="windowReload">刷新页面</n-button>
       <n-button @click="handleDebug">打开调试</n-button>
+      <n-button @click="mouseMove(100, 100)">移动鼠标</n-button>
       <span v-if="!appStore.remoteDesk.isRemoteing">等待远程</span>
       <n-button
         type="error"
