@@ -17,7 +17,7 @@
   },
   linux: {
     artifactName: '${productName}-Linux-${version}-Installer.${ext}',
-    target: [{ target: 'AppImage', arch: ['x64', 'arm64'] }],
+    target: [{ target: 'deb', arch: ['x64'] }],
   },
   win: {
     artifactName: '${productName}-Win-${version}-Installer.${ext}',

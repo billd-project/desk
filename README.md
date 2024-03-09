@@ -106,3 +106,7 @@ npm config set registry https://registry.npmmirror.com
      });
    ```
 3. 在node_modules/electron目录下执行node install
+
+### robotjs
+
+使用`https://github.com/hurdlegroup/robotjs`替换`robotjs`，原因：https://github.com/electron/rebuild/issues/1073#issuecomment-1910068444

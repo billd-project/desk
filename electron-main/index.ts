@@ -2,10 +2,10 @@ import path from 'path';
 
 import { BrowserWindow, app, desktopCapturer, ipcMain, screen } from 'electron';
 
-// import { nutjsTs } from './types';
+import { nutjsTs } from './types';
 
-// const nutjs: nutjsTs = require('@nut-tree/nut-js');
-const robotjs = require('robotjs');
+const nutjs: nutjsTs = require('@nut-tree/nut-js');
+// const robotjs = require('@hurdlegroup/robotjs');
 
 // 该版本electron所对应的node版本
 console.log('process.version', process.version);
@@ -86,7 +86,7 @@ function createWindow() {
   ipcMain.on('mouseSetPosition', async (_event, x, y) => {
     console.log('收到mouseSetPosition', x, y);
     try {
-      // await nutjs.mouse.setPosition({ x, y });
+      await nutjs.mouse.setPosition({ x, y });
       win?.webContents.send('mouseSetPositionRes', {
         isErr: false,
         msg: { x, y },
@@ -101,8 +101,8 @@ function createWindow() {
   ipcMain.on('mouseMove', async (_event, x, y) => {
     console.log('收到mouseMove', x, y);
     try {
-      // await nutjs.mouse.move([{ x, y }]);
-      await robotjs.moveMouse(x, y);
+      await nutjs.mouse.move([{ x, y }]);
+      // await robotjs.moveMouse(x, y);
       win?.webContents.send('mouseMoveRes', {
         isErr: false,
         msg: { x, y },
@@ -117,8 +117,8 @@ function createWindow() {
   ipcMain.on('mouseDrag', async (_event, x, y) => {
     console.log('收到mouseDrag', x, y);
     try {
-      // await nutjs.mouse.drag([{ x, y }]);
-      await robotjs.dragMouse(x, y);
+      await nutjs.mouse.drag([{ x, y }]);
+      // await robotjs.dragMouse(x, y);
       win?.webContents.send('mouseDragRes', {
         isErr: false,
         msg: { x, y },
@@ -133,7 +133,7 @@ function createWindow() {
   ipcMain.on('keyboardType', async (_event, key) => {
     console.log('收到keyboardType', key);
     try {
-      // await nutjs.keyboard.type(key);
+      await nutjs.keyboard.type(key);
       win?.webContents.send('keyboardTypeRes', {
         isErr: false,
         msg: { key },
@@ -148,8 +148,8 @@ function createWindow() {
   ipcMain.on('mousePressButtonLeft', async (_event, x, y) => {
     console.log('收到mousePressButtonLeft', x, y);
     try {
-      // await nutjs.mouse.pressButton(nutjs.Button.LEFT);
-      await robotjs.mouseToggle('down');
+      await nutjs.mouse.pressButton(nutjs.Button.LEFT);
+      // await robotjs.mouseToggle('down');
       win?.webContents.send('mousePressButtonLeftRes', {
         isErr: false,
         msg: { x, y },
@@ -164,8 +164,8 @@ function createWindow() {
   ipcMain.on('mouseReleaseButtonLeft', async (_event, x, y) => {
     console.log('收到mouseReleaseButtonLeft', x, y);
     try {
-      // await nutjs.mouse.releaseButton(nutjs.Button.LEFT);
-      await robotjs.mouseToggle('up');
+      await nutjs.mouse.releaseButton(nutjs.Button.LEFT);
+      // await robotjs.mouseToggle('up');
       win?.webContents.send('mouseReleaseButtonLeftRes', {
         isErr: false,
         msg: { x, y },
@@ -180,8 +180,8 @@ function createWindow() {
   ipcMain.on('mouseDoubleClick', async (_event, x, y) => {
     console.log('收到mouseDoubleClick', x, y);
     try {
-      // await nutjs.mouse.doubleClick(nutjs.Button.LEFT);
-      await robotjs.mouseClick('left', true);
+      await nutjs.mouse.doubleClick(nutjs.Button.LEFT);
+      // await robotjs.mouseClick('left', true);
       win?.webContents.send('mouseDoubleClickRes', {
         isErr: false,
         msg: { x, y },
@@ -196,8 +196,8 @@ function createWindow() {
   ipcMain.on('mouseLeftClick', async (_event, x, y) => {
     console.log('收到mouseLeftClick', x, y);
     try {
-      // await nutjs.mouse.click(nutjs.Button.LEFT);
-      await robotjs.mouseClick('left');
+      await nutjs.mouse.click(nutjs.Button.LEFT);
+      // await robotjs.mouseClick('left');
       win?.webContents.send('mouseLeftClickRes', {
         isErr: false,
         msg: { x, y },
@@ -212,8 +212,8 @@ function createWindow() {
   ipcMain.on('mouseRightClick', async (_event, x, y) => {
     console.log('收到mouseRightClick', x, y);
     try {
-      // await nutjs.mouse.click(nutjs.Button.RIGHT);
-      await robotjs.mouseClick('right');
+      await nutjs.mouse.click(nutjs.Button.RIGHT);
+      // await robotjs.mouseClick('right');
       win?.webContents.send('mouseRightClickRes', {
         isErr: false,
         msg: { x, y },

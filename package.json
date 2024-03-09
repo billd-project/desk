@@ -25,6 +25,7 @@
     "release": ""
   },
   "dependencies": {
+    "@hurdlegroup/robotjs": "^0.11.4",
     "@kangc/v-md-editor": "^2.3.17",
     "@nut-tree/nut-js": "^4.0.0",
     "@vicons/ionicons5": "^0.12.0",
@@ -39,7 +40,6 @@
     "naive-ui": "^2.34.4",
     "pinia": "^2.1.6",
     "pinia-plugin-persistedstate": "^3.2.1",
-    "robotjs": "^0.6.0",
     "socket.io-client": "^4.7.4",
     "spark-md5": "^3.0.2",
     "vconsole": "^3.15.1",
